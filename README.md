@@ -1,4 +1,4 @@
-# Classic Compsci Problems
+# Classic CompSci Problems
 with Python
 
-Examples and exercies based on the book of the same name.
+Examples and exercises based on the book of the same name.
