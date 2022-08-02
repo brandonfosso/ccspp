@@ -2,7 +2,7 @@ from pathlib import Path
 
 import nox
 
-nox.options.sessions = ("lint",)
+nox.options.sessions = ("check",)
 
 root_dir = Path(__file__).absolute().parent
 py_files = sorted(f.name for f in root_dir.iterdir() if f.suffix == ".py")
@@ -16,7 +16,7 @@ def black(session):
 
 
 @nox.session
-def lint(session):
+def flake8(session):
     args = session.posargs or py_files
     session.install(
         "flake8",
@@ -33,3 +33,9 @@ def mypy(session):
     args = session.posargs or py_files
     session.install("mypy")
     session.run("mypy", *args)
+
+
+@nox.session
+def check(session):
+    flake8(session)
+    mypy(session)
