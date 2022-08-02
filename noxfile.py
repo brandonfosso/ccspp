@@ -43,7 +43,15 @@ def mypy(session):
     session.run("mypy", *args)
 
 
+# Actions
 @nox.session
 def check(session):
     flake8(session)
     mypy(session)
+
+
+@nox.session
+def lint(session):
+    autoflake(session)
+    black(session)
+    check(session)
