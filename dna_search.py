@@ -4,7 +4,7 @@ Chapter 2: Search Problems
 Section 1: DNA Search
 """
 from enum import IntEnum
-from typing import Tuple, List
+from typing import List, Tuple
 
 Nucleotide: IntEnum = IntEnum("Nucleotide", ("A", "C", "G", "T"))
 Codon = Tuple[Nucleotide, Nucleotide, Nucleotide]

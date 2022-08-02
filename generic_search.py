@@ -4,7 +4,8 @@ Chapter 2: Search Problems
 Section 1: DNA Search
 """
 from __future__ import annotations
-from typing import TypeVar, Iterable, Sequence, Any
+
+from typing import Any, Iterable, Sequence, TypeVar
 
 from typing_extensions import Protocol
 

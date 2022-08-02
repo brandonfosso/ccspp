@@ -3,7 +3,7 @@ Classic Computer Science Problems in Python
 Chapter 1: Small Problems
 Section 5: The Towers of Hanoi
 """
-from typing import TypeVar, Generic, List
+from typing import Generic, List, TypeVar
 
 T = TypeVar("T")
 

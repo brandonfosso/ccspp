@@ -21,6 +21,8 @@ def lint(session):
     session.install(
         "flake8",
         "flake8-black",
+        "flake8-bugbear",
+        "flake8-docstrings",
         "flake8-import-order",
     )
     session.run("flake8", *args)
