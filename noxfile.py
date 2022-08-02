@@ -9,9 +9,10 @@ py_files = sorted(f.name for f in root_dir.iterdir() if f.suffix == ".py")
 
 
 @nox.session
-def format(session):
+def black(session):
+    args = session.posargs or py_files
     session.install("black")
-    session.run("black", *py_files)
+    session.run("black", *args)
 
 
 @nox.session
