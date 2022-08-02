@@ -8,6 +8,14 @@ root_dir = Path(__file__).absolute().parent
 py_files = sorted(f.name for f in root_dir.iterdir() if f.suffix == ".py")
 
 
+# Tools
+@nox.session
+def autoflake(session):
+    args = session.posargs or py_files
+    session.install("autoflake")
+    session.run("autoflake", "--in-place", *args)
+
+
 @nox.session
 def black(session):
     args = session.posargs or py_files
