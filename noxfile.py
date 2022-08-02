@@ -17,5 +17,9 @@ def black(session):
 
 @nox.session
 def lint(session):
-    session.install("flake8")
-    session.run("flake8", *py_files)
+    args = session.posargs or py_files
+    session.install(
+        "flake8",
+        "flake8-black",
+    )
+    session.run("flake8", *args)
