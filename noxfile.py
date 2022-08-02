@@ -12,3 +12,9 @@ py_files = sorted(f.name for f in root_dir.iterdir() if f.suffix == ".py")
 def format(session):
     session.install("black")
     session.run("black", *py_files)
+
+
+@nox.session
+def lint(session):
+    session.install("flake8")
+    session.run("flake8", *py_files)
