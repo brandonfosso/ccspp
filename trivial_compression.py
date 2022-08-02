@@ -46,8 +46,6 @@ class CompressedGene:
 
 if __name__ == "__main__":
     import random
-    import sys
-    import time
     from sys import getsizeof
 
     original: str = "".join(random.choices("ACTG", k=100)) * 100

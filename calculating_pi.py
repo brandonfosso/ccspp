@@ -18,9 +18,7 @@ def calculate_pi(n_terms: int) -> float:
 
 
 if __name__ == "__main__":
-    import random
     import sys
-    import time
 
     N = int(float(sys.argv[1]))
     print(calculate_pi(N))

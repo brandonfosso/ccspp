@@ -4,7 +4,9 @@ Chapter 1: Small Problems
 Section 5: The Towers of Hanoi
 """
 from typing import TypeVar, Generic, List
+
 T = TypeVar("T")
+
 
 class Stack(Generic[T]):
     def __init__(self) -> None:
@@ -20,14 +22,19 @@ class Stack(Generic[T]):
         return repr(self._container)
 
 
-def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
+def hanoi(
+    begin: Stack[int],
+    end: Stack[int],
+    temp: Stack[int],
+    n: int,
+) -> None:
     if n == 1:
-        print('move disc')
+        print("move disc")
         end.push(begin.pop())
     else:
-        hanoi(begin, temp, end, n-1)
+        hanoi(begin, temp, end, n - 1)
         hanoi(begin, end, temp, 1)
-        hanoi(temp, end, begin, n-1)
+        hanoi(temp, end, begin, n - 1)
 
 
 if __name__ == "__main__":
@@ -41,10 +48,9 @@ if __name__ == "__main__":
     print(tower_a)
     print(tower_b)
     print(tower_c)
-    
+
     hanoi(tower_a, tower_c, tower_b, num_discs)
 
     print(tower_a)
     print(tower_b)
     print(tower_c)
-    
