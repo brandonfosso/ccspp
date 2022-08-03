@@ -31,3 +31,10 @@ def lint(session):
     session.install("black")
     session.run("black", *args)
     check(session)
+
+
+@nox.session(reuse_venv=True)
+def test(session):
+    args = session.posargs or ["--cov"]
+    session.install("pytest", "pytest-cov")
+    session.run("pytest", *args)
